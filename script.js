@@ -21,3 +21,8 @@ const rockPaperScissor = () => {
 const randomElement = arr => arr[Math.floor(Math.random() * arr.length)]
 
 rockPaperScissor()
+
+// User input
+// confirm() // Ok = true, Cancel = false
+// prompt('Enter something:') // Cancel = null
+// console.log(prompt('enter message:') ?? 'You chose Cancel')

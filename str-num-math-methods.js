@@ -1,6 +1,7 @@
 // String methods
 console.log(typeof 'Hello World!')
 const msg = 'Hello World!'
+console.log(msg.charAt(0))
 console.log(msg.indexOf('el'))
 console.log(msg.lastIndexOf('l'))
 console.log(msg.slice(6, 11))

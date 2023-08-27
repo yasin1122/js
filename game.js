@@ -101,3 +101,28 @@ class SuperDev extends Dev {
 const newDev = new SuperDev('JavaScript', 6)
 newDev.exp = 11
 newDev.toString()
+
+// JSON
+const sendJSON = JSON.stringify(newDev)
+console.log(sendJSON, typeof sendJSON)
+const receiveJSON = JSON.parse(sendJSON)
+console.log(receiveJSON, typeof receiveJSON)
+
+// errors
+const makeError = () => {
+  let i = 1
+  while (i < 5) {
+    try {
+      if (i % 2 == 0) {
+        throw new Error('Even Number', i)
+      }
+      console.log('Odd Number', i)
+    } catch (err) {
+      console.error(err)
+    } finally {
+      i++
+      console.log('...finally', i)
+    }
+  }
+}
+makeError()

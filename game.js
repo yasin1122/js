@@ -57,23 +57,47 @@ printer(obj)
 
 // classes
 class Dev {
+  #lang
+  #exp
   constructor(lang, exp = 0) {
-    this._lang = lang
-    this._exp = exp
-    this._type = 'Full Stack'
+    this.#lang = lang
+    this.#exp = exp
   }
   get lang() {
-    return this._lang
+    return this.#lang
   }
-  set lang(_lang) {
-    this._lang = lang
+  set lang(lang) {
+    this.#lang = lang
+  }
+  get exp() {
+    return this.#exp
+  }
+  set exp(exp) {
+    this.#exp = exp
+  }
+}
+
+class SuperDev extends Dev {
+  status
+  #type
+  constructor(lang, exp) {
+    super(lang, exp)
+    this.#type = 'Full Stack'
+    this.status = 'Hello World'
+  }
+  get type() {
+    return this.#type
+  }
+  set type(type) {
+    this.#type = type
   }
   toString() {
     console.log(
-      `${this._type} developer with ${this._exp} years of ${this.lang} experience.`
+      `${this.type} developer with ${this.exp} years of ${this.lang} experience.`
     )
   }
 }
 
-const newDev = new Dev('JavaScript', 6)
+const newDev = new SuperDev('JavaScript', 6)
+newDev.exp = 11
 newDev.toString()

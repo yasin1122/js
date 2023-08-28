@@ -68,3 +68,23 @@ const initApp = () => {
     console.log('hello')
   })
 }
+
+// Storage
+const hobbies = ['eat', 'sleep', 'code']
+const devObj = {
+  name: 'Yasin',
+  hobbies: ['eat', 'sleep', 'code'],
+  logName() {
+    console.log(`My name is ${this.name}.`)
+  }
+}
+
+sessionStorage.setItem('sessionStore', JSON.stringify(devObj))
+const sessionData = JSON.parse(sessionStorage.getItem('sessionStore'))
+console.log(sessionData)
+
+localStorage.setItem('localStore', JSON.stringify(hobbies))
+const localKey = localStorage.key(0)
+const localData = JSON.parse(localStorage.getItem('localStore'))
+console.log(localKey, localStorage.length, localData)
+localStorage.removeItem('localStore') // clears local storage

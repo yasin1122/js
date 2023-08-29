@@ -23,6 +23,73 @@ console.log(mappedPosts)
 
 const reducedPosts = mappedPosts.reduce((sum, post) => sum + post)
 console.log(reducedPosts)
+console.clear()
+
+// Promises
+const myPromise = new Promise((resolve, reject) => {
+  const error = false
+  if (!error) {
+    resolve('myPromise Resolved!')
+  } else {
+    reject('myPromise Rejected!')
+  }
+})
+
+const nextPromise = new Promise((resolve, reject) => {
+  const error = false
+  if (!error) {
+    setTimeout(() => {
+      resolve('nextPromise Resolved!')
+    }, 1)
+  } else {
+    reject('nextPromise Rejected!')
+  }
+})
+
+nextPromise.then(value => {
+  console.log(value)
+})
+
+myPromise
+  .then(value => {
+    console.log(value)
+    return value + 1
+  })
+  .then(newValue => {
+    console.log(newValue)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+const users = fetch('https://jsonplaceholder.typicode.com/users')
+console.log(users)
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    console.log(data)
+  })
+
+// Async
+const myUsers = {
+  userList: []
+}
+
+const asyncFunction = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const jsonUserData = await response.json()
+  return jsonUserData
+}
+
+const nextAsync = async () => {
+  const data = await asyncFunction()
+  console.log(data)
+}
+
+nextAsync()
 
 // Ternary Operator
 

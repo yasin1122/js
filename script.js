@@ -74,9 +74,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
   })
 
 // Async
-const myUsers = {
-  userList: []
-}
 
 const asyncFunction = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -90,6 +87,40 @@ const nextAsync = async () => {
 }
 
 nextAsync()
+
+const getDadJoke = async () => {
+  const response = await fetch('https://icanhazdadjoke.com/', {
+    method: 'GET',
+    headers: {
+      // Accept: 'application/json'
+      Accept: 'text/plain'
+    }
+  })
+  const jokeData = await response.text()
+  // console.log(jokeData.joke)
+  console.log(jokeData)
+}
+
+getDadJoke()
+
+const jokeObj = {
+  id: '0oO71TSv4Ed',
+  joke: 'Why was it called the dark ages? Because of all the knights.'
+}
+
+const postDadJoke = async jokeObj => {
+  const response = await fetch('https://httpbin.org/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(jokeObj)
+  })
+  const jsonResponse = await response.json()
+  console.log(jsonResponse)
+}
+
+postDadJoke(jokeObj)
 
 // Ternary Operator
 

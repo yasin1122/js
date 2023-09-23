@@ -1,2 +1,2 @@
 # js tutorial
- FE6
+ FE7

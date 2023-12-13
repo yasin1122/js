@@ -1,2 +1,2 @@
 # js tutorial
- FE14abcd
+ FE14abc

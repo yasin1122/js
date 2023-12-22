@@ -1,2 +1,2 @@
 # js tutorial
- FE14abcdefghijklmnopqrstuvwx
+ FE14abcdefghijklmnopqrstuvw
